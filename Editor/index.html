@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -10,9 +9,9 @@
 
 		html,
 		body {
-                        border-top-left-radius: 10px; /* Top left rounded corner */
-                        border-bottom-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
+			border-top-left-radius: 10px; /* Top left rounded corner */
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
 			background-color: #141414;
 			width: 100%;
 			height: 100%;
@@ -91,62 +90,39 @@
 				return newProposals;
 			}
 
-			monaco.editor.defineTheme('Dark', {
-                base: 'vs-dark',
-                inherit: true,
- 			rules: [
-	{ "token": "variable.language.self", "foreground": "ffffff" },
-        { "token": "variable.parameter.variadic", "foreground": "ffffff" },
-        { "token": "variable.parameter.function", "foreground": "a9c4f5" },
-        { "token": "variable.other.constant", "foreground": "ffffff" },
-        { "token": "variable.property", "foreground": "ffffff" },
-        { "token": "variable.object.property", "foreground": "ffffff" },
-        { "token": "keyword", "foreground": "6495ed" },
-        { "token": "keyword.local", "foreground": "6495ed", "fontStyle": "bold" },
-        { "token": "keyword.operator", "foreground": "6495ed" },
-        { "token": "keyword.operator.type.annotation", "foreground": "6495ed" },
-        { "token": "keyword.operator.typedef.annotation", "foreground": "6495ed" },
-        { "token": "keyword.control.export", "foreground": "6495ed", "fontStyle": "bold" },
-        { "token": "operator", "foreground": "ffffff" },
-        { "token": "operator.type", "foreground": "ffffff" },
-        { "token": "operator.special", "foreground": "ffffff" },
-        { "token": "entity.name.type.alias", "foreground": "ffffff" },
-        { "token": "entity.name.function", "foreground": "c0c0c0" },
-        { "token": "global", "foreground": "1f66e5", "fontStyle": "bold" },
-        { "token": "storage.type", "foreground": "ffffff" },
-        { "token": "comment", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "comment.highlight.title", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "comment.highlight.name", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "comment.delimiter.modifier", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "comment.highlight.modifier", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "comment.highlight.descriptor", "foreground": "999999", "fontStyle": "italic" },
-        { "token": "delimiter.longstring", "foreground": "ffffff" },
-        { "token": "delimiter.bracket", "foreground": "ffffff" },
-        { "token": "delimiter.array", "foreground": "ffffff" },
-        { "token": "delimiter.parenthesis", "foreground": "ffffff" },
-        { "token": "delimiter", "foreground": "ffffff" },
-        { "token": "string", "foreground": "a9c4f5" },
-        { "token": "longstring", "foreground": "a9c4f5" },
-        { "token": "string.delimeter", "foreground": "a9c4f5" },
-        { "token": "string.escape", "foreground": "a9c4f5" },
-        { "token": "punctuation.separator.arguments", "foreground": "ffffff" },
-        { "token": "punctuation.separator.parameter", "foreground": "ffffff" },
-        { "token": "punctuation.separator.table", "foreground": "ffffff" },
-        { "token": "punctuation.definition.block", "foreground": "ffffff" },
-        { "token": "punctuation.definition.parameters", "foreground": "ffffff" },
-        { "token": "punctuation.definition.typeparameters", "foreground": "ffffff" },
-        { "token": "constant.language", "foreground": "a092f3" },
-        { "token": "number", "foreground": "f08080" },
-        { "token": "constants", "foreground": "ffffff" },
-        { "token": "support.function", "foreground": "a092f3" },
-        { "token": "support.function.library", "foreground": "ffffff" },
-        { "token": "support.type", "foreground": "ffffff" },
-                	],
-                colors: {
-		    'editor.background': '#0a0a0f',
-                    'minimap.background': '#0d0d0d'
-                }
-            });
+			monaco.editor.defineTheme('LuaDefault', {
+				base: 'vs-dark',
+				inherit: true,
+				rules: [
+					{ "token": "variable.language.self", "foreground": "ffffff" },
+					{ "token": "variable.parameter.variadic", "foreground": "ffffff" },
+					{ "token": "variable.parameter.function", "foreground": "a9c4f5" },
+					{ "token": "variable.other.constant", "foreground": "ffffff" },
+					{ "token": "variable.property", "foreground": "ffffff" },
+					{ "token": "variable.object.property", "foreground": "ffffff" },
+					{ "token": "keyword", "foreground": "569cd6" },  // Keyword color for Lua (blue)
+					{ "token": "keyword.local", "foreground": "569cd6", "fontStyle": "bold" }, // Local keyword
+					{ "token": "keyword.operator", "foreground": "d4d4d4" },  // Operators color (light gray)
+					{ "token": "operator", "foreground": "d4d4d4" },  // General operator color
+					{ "token": "entity.name.function", "foreground": "dcdcaa" },  // Function name color (light yellow)
+					{ "token": "comment", "foreground": "6a9955", "fontStyle": "italic" },  // Comments in green
+					{ "token": "string", "foreground": "ce9178" },  // String color (light brown)
+					{ "token": "number", "foreground": "b5cea8" },  // Numbers color (light green)
+					{ "token": "constant.language", "foreground": "569cd6" },  // Constants color (blue)
+					{ "token": "constant.character", "foreground": "b5cea8" },  // Character constants color
+					{ "token": "punctuation.definition.string", "foreground": "ce9178" },  // String delimiters
+					{ "token": "punctuation.separator.arguments", "foreground": "d4d4d4" },  // Arguments separator
+					{ "token": "punctuation.separator.parameter", "foreground": "d4d4d4" },  // Parameter separator
+				],
+				colors: {
+					'editor.background': '#101010',  // Darker background color
+					'minimap.background': '#101010',  // Minimap background color
+					'editorLineNumber.foreground': '#858585',  // Light gray line numbers
+					'editorCursor.foreground': '#ffffff',  // Cursor color
+					'editor.selectionBackground': '#515c6e',  // Selection color
+					'editor.selectionHighlightBackground': '#616e7c',  // Highlighted selection color
+				}
+			});
 
 			require(['vs/basic-languages/monaco.contribution'], function () {
 				monaco.languages.registerCompletionItemProvider('lua', {
@@ -161,7 +137,7 @@
 				editor = monaco.editor.create(document.getElementById('container'), {
 					value: '',
 					language: 'lua',
-					theme: "Dark",
+					theme: "LuaDefault",  // Set to the new Lua default theme
 					folding: true,
 					dragAndDrop: true,
 					links: true,
@@ -190,53 +166,52 @@
 				editor.layout();
 			}
 
-			Cut = function() {
+			Cut = function () {
 				editor.focus();
 				document.execCommand('cut');
 			}
 
-			Copy = function() {
+			Copy = function () {
 				editor.focus();
 				document.execCommand('copy');
 			}
 
-			Paste = function() {
+			Paste = function () {
 				editor.focus();
 				document.execCommand('paste');
 			}
 
-			Undo = function() {
+			Undo = function () {
 				editor.focus();
 				document.execCommand('undo');
 			}
 
-			Redo = function() {
+			Redo = function () {
 				editor.focus();
 				document.execCommand('redo');
 			}
 
-			Delete = function() {
+			Delete = function () {
 				editor.focus();
 				document.execCommand('delete');
 			}
 
-			SelectAll = function() {
+			SelectAll = function () {
 				editor.focus();
 				document.execCommand('selectAll');
 			}
 
-			GetText = function() {
+			GetText = function () {
 				return editor.getValue();
 			}
 
-			SetText = function(x) {
+			SetText = function (x) {
 				editor.setValue(x);
 			}
 
 			GetProposals = function () {
 				return Proposals;
 			}
-
 
 			OnDidChangeContent = function (callback) {
 				return editor.onDidChangeModelContent((event) => {
@@ -368,82 +343,73 @@
 				editor.trigger('keyboard', 'type', { text: Text });
 			}
 
-		AddIntellisense = function(l, k, d, i) {
-                    console.log(l);
-                    console.log(k);
-                    console.log(d);
-                    console.log(i);
-                    var t;
-                    switch(k)
-                    {
-                        case "Class":
-                            t = monaco.languages.CompletionItemKind.Class;
-                            break;
-                        case "Color":
-                            t = monaco.languages.CompletionItemKind.Color;
-                            break;
-                        case "Constructor":
-                            t = monaco.languages.CompletionItemKind.Constructor;
-                            break;
-                        case "Enum":
-                            t = monaco.languages.CompletionItemKind.Enum;
-                            break;
-                        case "Field":
-                            t = monaco.languages.CompletionItemKind.Field;
-                            break;
-                        case "File":
-                            t = monaco.languages.CompletionItemKind.File;
-                            break;
-                        case "Folder":
-                            t = monaco.languages.CompletionItemKind.Folder;
-                            break;
-                        case "Function":
-                            t = monaco.languages.CompletionItemKind.Function;
-                            break;
-                        case "Interface":
-                            t = monaco.languages.CompletionItemKind.Interface;
-                            break;
-                        case "Keyword":
-                            t = monaco.languages.CompletionItemKind.Keyword;
-                            break;
-                        case "Method":
-                            t = monaco.languages.CompletionItemKind.Method;
-                            break;
-                        case "Module":
-                            t = monaco.languages.CompletionItemKind.Module;
-                            break;
-                        case "Property":
-                            t = monaco.languages.CompletionItemKind.Property;
-                            break;
-                        case "Reference":
-                            t = monaco.languages.CompletionItemKind.Reference;
-                            break;
-                        case "Snippet":
-                            t = monaco.languages.CompletionItemKind.Snippet;
-                            break;
-                        case "Text":
-                            t = monaco.languages.CompletionItemKind.Text;
-                            break;
-                        case "Unit":
-                            t = monaco.languages.CompletionItemKind.Unit;
-                            break;
-                        case "Value":
-                            t = monaco.languages.CompletionItemKind.Value;
-                            break;
-                        case "Variable":
-                            t = monaco.languages.CompletionItemKind.Variable;
-                            break;
-                    }
-                    
-                    Proposals.push({
-                        label: l,
-                        kind: t,
-                        detail: d,
-                        insertText: i
-                    });
-
-                    console.log(Proposals);
-                }
+			AddIntellisense = function (l, k, d, i) {
+				console.log(l);
+				console.log(k);
+				console.log(d);
+				console.log(i);
+				var t;
+				switch (k) {
+					case "Class":
+						t = monaco.languages.CompletionItemKind.Class;
+						break;
+					case "Color":
+						t = monaco.languages.CompletionItemKind.Color;
+						break;
+					case "Constructor":
+						t = monaco.languages.CompletionItemKind.Constructor;
+						break;
+					case "Enum":
+						t = monaco.languages.CompletionItemKind.Enum;
+						break;
+					case "EnumMember":
+						t = monaco.languages.CompletionItemKind.EnumMember;
+						break;
+					case "Field":
+						t = monaco.languages.CompletionItemKind.Field;
+						break;
+					case "Function":
+						t = monaco.languages.CompletionItemKind.Function;
+						break;
+					case "Interface":
+						t = monaco.languages.CompletionItemKind.Interface;
+						break;
+					case "Keyword":
+						t = monaco.languages.CompletionItemKind.Keyword;
+						break;
+					case "Method":
+						t = monaco.languages.CompletionItemKind.Method;
+						break;
+					case "Module":
+						t = monaco.languages.CompletionItemKind.Module;
+						break;
+					case "Property":
+						t = monaco.languages.CompletionItemKind.Property;
+						break;
+					case "Snippet":
+						t = monaco.languages.CompletionItemKind.Snippet;
+						break;
+					case "Text":
+						t = monaco.languages.CompletionItemKind.Text;
+						break;
+					case "Type":
+						t = monaco.languages.CompletionItemKind.Type;
+						break;
+					case "Unit":
+						t = monaco.languages.CompletionItemKind.Unit;
+						break;
+					default:
+						t = monaco.languages.CompletionItemKind.Text;
+						break;
+				}
+				Proposals.push({
+					label: l,
+					kind: t,
+					insertText: k,
+					detail: d,
+					documentation: i
+				});
+			}
 		});
 	</script>
 </body>
